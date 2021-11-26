@@ -594,6 +594,8 @@ function renderAppContainer() {
                 </div>
             </div>
         </div>`
+    
+    // Handle button active
     var btn1 = $$(".home-filter-btn.btn")
     console.log($('button.home-filter-btn.btn.btn--primary'))
     btn1.forEach(btn=>{
