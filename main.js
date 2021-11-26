@@ -594,7 +594,14 @@ function renderAppContainer() {
                 </div>
             </div>
         </div>`
-        
+    var btn1 = $$(".home-filter-btn.btn")
+    console.log($('button.home-filter-btn.btn.btn--primary'))
+    btn1.forEach(btn=>{
+        btn.onclick = () =>{
+            $('button.home-filter-btn.btn.btn--primary').classList.remove('btn--primary')
+            btn.classList.add('btn--primary')
+        }
+    })
     var html = listProduct.map(product =>{
         return `
         <div class="grid__column-2-5">
