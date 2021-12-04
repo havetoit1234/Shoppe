@@ -327,11 +327,11 @@ function createAccount() {
     }
 
 // Check information Register
-    var checkOld = true;
+    var checkEmailOld = true;
     for (var i = 0; i < accoutList.length; i++) {
         var currentAccount = accoutList[i];
         if (email == currentAccount.email) {
-            check = false;
+            checkEmailOld = false;
             $('#email-register').classList.add('input-error');
             $('#email-register').parentElement.querySelector('.error-msg').innerHTML = 'Email đã tồn tại, vui lòng nhập lại email khác';
         }
@@ -345,7 +345,7 @@ function createAccount() {
             $('#username-register').parentElement.querySelector('.error-msg').innerHTML = 'username đã tồn tại, vui lòng nhập lại username khác';
         }
     }
-    if (checkEmail && checkUsername && username.trim() != '' && password.trim() != '' && password_confirm.trim().length >= 8 && password_confirm.trim() === password.trim() && checkOld == true) {
+    if (checkEmail && checkUsername && username.trim() != '' && password.trim() != '' && password_confirm.trim().length >= 8 && password_confirm.trim() === password.trim() && checkEmailOld === true) {
         var newAccount = new accountUser(null, email, password, username);
         accoutList.push(newAccount);
         localStorage.setItem('accoutList',JSON.stringify(accoutList) );
